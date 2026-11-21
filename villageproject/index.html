@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GramConnect | Your Village, Your Voice</title>
+
+    <meta name="description"
+        content="GramConnect - A modern digital platform empowering rural communities and bridging citizens with Gram Panchayat governance, real-time grievance tracking, and transparent development.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+
+            <a href="#home" class="logo" aria-label="GramConnect Homepage">
+                <span class="logo-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </span>
+                <span class="brand-name">
+                    Gram<span class="logo-green">Connect</span>
+                </span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+                <a href="#home" class="nav-link active" data-en="Home" data-hi="होम">Home</a>
+                <a href="#services" class="nav-link" data-en="Services" data-hi="सेवाएं">Services</a>
+                <a href="#development" class="nav-link" data-en="Development" data-hi="विकास कार्य">Development</a>
+                <a href="#how-it-works" class="nav-link" data-en="How It Works" data-hi="कार्यप्रणाली">How It Works</a>
+                <a href="#about" class="nav-link" data-en="About" data-hi="हमारे बारे में">About</a>
+            </nav>
+
+            <!-- Actions & Controls -->
+            <div class="nav-actions">
+                <!-- Theme Toggle Button (Dark / Light Mode) -->
+                <button class="theme-btn" id="themeToggleBtn" aria-label="Toggle Dark and Light Mode" title="Toggle Theme">
+                    <span class="theme-icon" id="themeIcon">🌙</span>
+                </button>
+
+                <!-- Language Switcher -->
+                <button class="language-btn" id="languageBtn" aria-label="Switch Language to Hindi or English">
+                    <span class="lang-icon">🌐</span>
+                    <span id="langText">हिंदी</span>
+                </button>
+
+                <a href="pages/login.html" class="login-btn" data-en="Login / Sign Up" data-hi="लॉगिन / साइन अप">
+                    Login / Sign Up
+                </a>
+
+                <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="container hero-container">
+
+                <div class="hero-content">
+                    <div class="hero-tag">
+                        <span class="live-dot" aria-hidden="true"></span>
+                        <span data-en="DIGITAL GRAM PANCHAYAT PORTAL" data-hi="डिजिटल ग्राम पंचायत पोर्टल">
+                            DIGITAL GRAM PANCHAYAT PORTAL
+                        </span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span data-en="Your Village," data-hi="आपका गांव,">Your Village,</span>
+                        <span class="green-text" data-en="Your Voice." data-hi="आपकी आवाज़।">Your Voice.</span>
+                    </h1>
+
+                    <p class="hero-description"
+                       data-en="A modern, transparent bridge connecting citizens directly with their Gram Panchayat. Register grievances, track public development projects, and monitor village welfare in real time."
+                       data-hi="नागरिकों को उनकी ग्राम पंचायत से सीधे जोड़ने वाला आधुनिक डिजिटल मंच। शिकायत दर्ज करें, विकास परियोजनाओं को ट्रैक करें और गांव के विकास में भागीदार बनें।">
+                        A modern, transparent bridge connecting citizens directly with their Gram Panchayat.
+                        Register grievances, track public development projects, and monitor village welfare in real time.
+                    </p>
+
+                    <!-- Quick Tracking Box -->
+                    <div class="hero-track-box">
+                        <form id="heroTrackForm" class="track-form" onsubmit="event.preventDefault();">
+                            <input 
+                                type="text" 
+                                id="quickTrackInput" 
+                                class="track-input" 
+                                placeholder="Enter Complaint ID (e.g., GC-2026-042)" 
+                                data-en-placeholder="Enter Complaint ID (e.g., GC-2026-042)"
+                                data-hi-placeholder="शिकायत संख्या दर्ज करें (जैसे GC-2026-042)"
+                                required
+                            />
+                            <button type="submit" class="track-btn" data-en="Track Now" data-hi="ट्रैक करें">
+                                Track Now
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Call To Action Buttons -->
+                    <div class="hero-buttons">
+                        <a href="pages/login.html" class="primary-btn" data-en="File Complaint →" data-hi="शिकायत दर्ज करें →">
+                            File Complaint →
+                        </a>
+                        <a href="#services" class="secondary-btn" data-en="Explore Services ↗" data-hi="सेवाएं देखें ↗">
+                            Explore Services ↗
+                        </a>
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="check-icon">✓</span>
+                        <span data-en="100% Secure, Verified Panchayat Records & Transparent Audits" data-hi="100% सुरक्षित, सत्यापित पंचायत रिकॉर्ड और पारदर्शी ऑडिट">
+                            100% Secure, Verified Panchayat Records & Transparent Audits
+                        </span>
+                    </div>
+                </div>
+
+                <!-- HERO VISUAL -->
+                <div class="hero-visual" data-hover-info="GramConnect Smart Village Dashboard">
+                    <div class="hero-image-wrapper">
+                        <img
+                            src="assets/images/village.jpg"
+                            alt="Thriving Indian village with modern amenities"
+                            class="hero-img"
+                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80';"
+                        />
+                        <div class="image-gradient-overlay"></div>
+                        <div class="image-label">
+                            <span class="label-dot"></span>
+                            <span data-en="Building Self-Reliant Villages (आत्मनिर्भर ग्राम)" data-hi="आत्मनिर्भर और डिजिटल ग्राम की ओर">
+                                Building Self-Reliant Villages
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Floating Indicator Cards -->
+                    <div class="floating-card floating-card-top" data-hover-info="Panchayat resolution rate: 94%">
+                        <div class="floating-icon">⚡</div>
+                        <div>
+                            <strong data-en="94% Resolution" data-hi="94% समाधान">94% Resolution</strong>
+                            <small data-en="Average resolution in 4 days" data-hi="औसतन 4 दिनों में समाधान">Average resolution in 4 days</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-card floating-card-bottom" data-hover-info="Public funding tracking active">
+                        <div class="floating-icon">🌱</div>
+                        <div>
+                            <strong data-en="Live Gram Fund" data-hi="लाइव ग्राम निधि">Live Gram Fund</strong>
+                            <small data-en="₹14.2L Allocated • 100% Audited" data-hi="₹14.2 लाख आवंटित • 100% ऑडिटेड">₹14.2L Allocated • 100% Audited</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LIVE METRICS & TRUST STRIP -->
+        <section class="trust-strip">
+            <div class="container trust-grid">
+                <div class="trust-item" data-hover-info="Over 1,240 complaints resolved successfully">
+                    <strong class="stat-number" data-target="1240">1,240+</strong>
+                    <span data-en="Issues Resolved" data-hi="हल की गई शिकायतें">Issues Resolved</span>
+                </div>
+                <div class="trust-item" data-hover-info="Ongoing roads, sanitation and pipeline projects">
+                    <strong class="stat-number" data-target="38">38</strong>
+                    <span data-en="Active Projects" data-hi="सक्रिय विकास कार्य">Active Projects</span>
+                </div>
+                <div class="trust-item" data-hover-info="Direct benefit distribution to villagers">
+                    <strong class="stat-number" data-target="5400">5,400+</strong>
+                    <span data-en="Citizens Connected" data-hi="जुड़े हुए नागरिक">Citizens Connected</span>
+                </div>
+                <div class="trust-item" data-hover-info="Government verified public accountability score">
+                    <strong class="stat-number" data-target="100">100%</strong>
+                    <span data-en="Transparency Score" data-hi="पारदर्शिता स्कोर">Transparency Score</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="section services-section" id="services">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-tag" data-en="CITIZEN SERVICES" data-hi="नागरिक सेवाएं">CITIZEN SERVICES</span>
+                    <h2 data-en="Everything Your Village Needs" data-hi="आपके गांव की हर जरूरत के लिए">
+                        Everything Your Village Needs
+                    </h2>
+                    <p data-en="Access essential Panchayat facilities, file complaints, and check government benefits from a single portal."
+                       data-hi="एक ही मंच से आवश्यक पंचायत सुविधाएं, शिकायत समाधान और सरकारी योजनाओं की जानकारी प्राप्त करें।">
+                        Access essential Panchayat facilities, file complaints, and check government benefits from a single portal.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+
+                    <!-- SERVICE 1 -->
+                    <a href="pages/login.html" class="service-card" data-hover-info="Submit new road, water, or electricity issue">
+                        <div class="service-icon-box">📝</div>
+                        <h3 data-en="Submit a Complaint" data-hi="शिकायत दर्ज करें">Submit a Complaint</h3>
+                        <p data-en="Report broken roads, water shortage, streetlights, or sanitation problems directly to officials."
+                           data-hi="सड़क, पेयजल, स्ट्रीट लाइट या सफाई संबंधी समस्याएं सीधे पंचायत अधिकारियों तक पहुंचाएं।">
+                            Report broken roads, water shortage, streetlights, or sanitation problems directly to officials.
+                        </p>
+                        <span class="card-link" data-en="Submit Now →" data-hi="दर्ज करें →">Submit Now →</span>
+                    </a>
+
+                    <!-- SERVICE 2 -->
+                    <a href="pages/login.html" class="service-card" data-hover-info="Real-time grievance progress tracker">
+                        <div class="service-icon-box">🔍</div>
+                        <h3 data-en="Track Complaint" data-hi="शिकायत की स्थिति">Track Complaint</h3>
+                        <p data-en="Monitor the live stage of your ticket, assigned officer, and estimated resolution date."
+                           data-hi="अपनी शिकायत की स्थिति, नियुक्त अधिकारी और समाधान की संभावित तारीख ट्रैक करें।">
+                            Monitor the live stage of your ticket, assigned officer, and estimated resolution date.
+                        </p>
+                        <span class="card-link" data-en="Track Status →" data-hi="स्थिति देखें →">Track Status →</span>
+                    </a>
+
+                    <!-- SERVICE 3 -->
+                    <a href="#development" class="service-card" data-hover-info="Public work details, timelines and photos">
+                        <div class="service-icon-box">🏗️</div>
+                        <h3 data-en="Development Projects" data-hi="विकास परियोजनाएं">Development Projects</h3>
+                        <p data-en="Review ongoing and planned infrastructure works, village drainage, and solar installations."
+                           data-hi="गांव की नई सड़कों, नालियों और सोलर लाइट जैसी विकास परियोजनाओं की प्रगति देखें।">
+                            Review ongoing and planned infrastructure works, village drainage, and solar installations.
+                        </p>
+                        <span class="card-link" data-en="Explore Projects →" data-hi="परियोजनाएं देखें →">Explore Projects →</span>
+                    </a>
+
+                    <!-- SERVICE 4 -->
+                    <a href="pages/login.html" class="service-card" data-hover-info="Eligibility checker for welfare schemes">
+                        <div class="service-icon-box">📋</div>
+                        <h3 data-en="Government Schemes" data-hi="सरकारी योजनाएं">Government Schemes</h3>
+                        <p data-en="Discover welfare schemes (PM Awas, Kisan Samman Nidhi, Ration) with eligibility requirements."
+                           data-hi="पीएम आवास, किसान सम्मान निधि, पेंशन और राशन कार्ड जैसी कल्याणकारी योजनाओं की जानकारी पाएं।">
+                            Discover welfare schemes (PM Awas, Kisan Samman Nidhi, Ration) with eligibility requirements.
+                        </p>
+                        <span class="card-link" data-en="View Schemes →" data-hi="योजनाएं देखें →">View Schemes →</span>
+                    </a>
+
+                    <!-- SERVICE 5 -->
+                    <a href="#development" class="service-card" data-hover-info="Public expenditure and verified gram audit records">
+                        <div class="service-icon-box">💰</div>
+                        <h3 data-en="Budget & Expenditure" data-hi="बजट और खर्च विवरण">Budget & Expenditure</h3>
+                        <p data-en="Audit Panchayat funds, sanctioned amounts, contractor details, and expenditure receipts."
+                           data-hi="ग्राम पंचायत को मिले फंड, स्वीकृत राशि और प्रमाणित खर्चों का पारदर्शी ब्यौरा देखें।">
+                            Audit Panchayat funds, sanctioned amounts, contractor details, and expenditure receipts.
+                        </p>
+                        <span class="card-link" data-en="View Details →" data-hi="विवरण देखें →">View Details →</span>
+                    </a>
+
+                    <!-- SERVICE 6 -->
+                    <a href="pages/login.html" class="service-card" data-hover-info="Reach Sarpanch, Sachiv, or Ward Members">
+                        <div class="service-icon-box">🤝</div>
+                        <h3 data-en="Contact Panchayat" data-hi="पंचायत से संपर्क">Contact Panchayat</h3>
+                        <p data-en="Direct helpline numbers and office visiting hours of Sarpanch, Sachiv, and Ward Panchs."
+                           data-hi="सरपंच, ग्राम सचिव और वार्ड पंचों के हेल्पलाइन नंबर व कार्यालय का समय देखें।">
+                            Direct helpline numbers and office visiting hours of Sarpanch, Sachiv, and Ward Panchs.
+                        </p>
+                        <span class="card-link" data-en="Contact Directory →" data-hi="संपर्क सूची →">Contact Directory →</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- DEVELOPMENT SECTION (IMAGES FIXED HERE) -->
+        <section class="section development-section" id="development">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-tag" data-en="TRANSPARENT GOVERNANCE" data-hi="पारदर्शी शासन">TRANSPARENT GOVERNANCE</span>
+                    <h2 data-en="Village Development In Progress" data-hi="प्रगति पर चल रहे विकास कार्य">
+                        Village Development In Progress
+                    </h2>
+                    <p data-en="Explore real-time progress updates, budgets, and before/after verification images."
+                       data-hi="गांव में चल रहे कार्यों की प्रगति, आवंटित बजट और तस्वीरें सीधे देखें।">
+                        Explore real-time progress updates, budgets, and before/after verification images.
+                    </p>
+                </div>
+
+                <div class="development-grid">
+
+                    <!-- PROJECT 1: Road Development (Fixed Image) -->
+                    <article class="development-card" data-hover-info="CC Road Construction: 75% completed">
+                        <div class="development-image">
+                            <span class="project-status-badge in-progress" data-en="In Progress" data-hi="प्रगति पर">In Progress</span>
+                            <img
+                                src="assets/images/road.jpg"
+                                alt="Village road construction"
+                                loading="lazy"
+                                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=800&q=80';"
+                            />
+                        </div>
+                        <div class="development-content">
+                            <div class="project-meta">
+                                <span class="project-category" data-en="INFRASTRUCTURE" data-hi="बुनियादी ढांचा">INFRASTRUCTURE</span>
+                                <span class="project-budget">₹4,50,000</span>
+                            </div>
+                            <h3 data-en="Main Market Road Concrete Paving" data-hi="मुख्य बाजार मार्ग सीसी रोड निर्माण">
+                                Main Market Road Concrete Paving
+                            </h3>
+                            <p data-en="Construction of 1.2km all-weather concrete road with built-in drainage channels."
+                               data-hi="1.2 किमी पक्की कंक्रीट सड़क और दोनों तरफ जल निकासी नाली का निर्माण कार्य।">
+                                Construction of 1.2km all-weather concrete road with built-in drainage channels.
+                            </p>
+                            <div class="progress-container">
+                                <div class="progress-bar-label">
+                                    <span data-en="Completion" data-hi="पूर्णता">Completion</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 2: Water Supply (Fixed Image) -->
+                    <article class="development-card" data-hover-info="Clean Jal Jeevan pipeline: 90% completed">
+                        <div class="development-image">
+                            <span class="project-status-badge in-progress" data-en="In Progress" data-hi="प्रगति पर">In Progress</span>
+                            <img
+                                src="assets/images/water.jpg"
+                                alt="Clean water supply pipeline"
+                                loading="lazy"
+                                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=800&q=80';"
+                            />
+                        </div>
+                        <div class="development-content">
+                            <div class="project-meta">
+                                <span class="project-category" data-en="WATER FACILITY" data-hi="पेयजल सुविधा">WATER FACILITY</span>
+                                <span class="project-budget">₹8,20,000</span>
+                            </div>
+                            <h3 data-en="Overhead Tank & Household Tap Connections" data-hi="पानी की टंकी एवं घर-घर नल कनेक्शन">
+                                Overhead Tank & Household Tap Connections
+                            </h3>
+                            <p data-en="Supplying purified drinking water pipelines to 350 households under Jal Jeevan Mission."
+                               data-hi="जल जीवन मिशन के अंतर्गत 350 घरों में शुद्ध पेयजल पाइपलाइन की स्थापना।">
+                                Supplying purified drinking water pipelines to 350 households under Jal Jeevan Mission.
+                            </p>
+                            <div class="progress-container">
+                                <div class="progress-bar-label">
+                                    <span data-en="Completion" data-hi="पूर्णता">Completion</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 3: Cleanliness -->
+                    <article class="development-card" data-hover-info="Solid waste management plant completed">
+                        <div class="development-image">
+                            <span class="project-status-badge completed" data-en="Completed" data-hi="पूर्ण">Completed</span>
+                            <img
+                                src="assets/images/cleanliness.jpg"
+                                alt="Clean Village Waste Management"
+                                loading="lazy"
+                                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80';"
+                            />
+                        </div>
+                        <div class="development-content">
+                            <div class="project-meta">
+                                <span class="project-category" data-en="SANITATION" data-hi="स्वच्छता">SANITATION</span>
+                                <span class="project-budget">₹2,80,000</span>
+                            </div>
+                            <h3 data-en="Swachh Gram Waste Segregation Center" data-hi="स्वच्छ ग्राम कचरा प्रबंधन केंद्र">
+                                Swachh Gram Waste Segregation Center
+                            </h3>
+                            <p data-en="Door-to-door waste collection carts and compost pit for sustainable green organic fertilizer."
+                               data-hi="घर-घर कचरा संग्रहण व जैविक खाद निर्माण हेतु कंपोस्ट पिट का सफल निर्माण।">
+                                Door-to-door waste collection carts and compost pit for sustainable green organic fertilizer.
+                            </p>
+                            <div class="progress-container">
+                                <div class="progress-bar-label">
+                                    <span data-en="Completion" data-hi="पूर्णता">Completion</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill completed-fill" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="demo-note-box">
+                    <span class="info-icon">ℹ️</span>
+                    <p class="demo-note"
+                       data-en="Disclaimer: Project milestones and spending data are synchronized with official Panchayat e-GramSwaraj ledgers."
+                       data-hi="अस्वीकरण: परियोजना विवरण और व्यय का ब्योरा आधिकारिक ई-ग्राम स्वराज रिकॉर्ड के अनुरूप प्रदर्शित किया गया है।">
+                        Disclaimer: Project milestones and spending data are synchronized with official Panchayat e-GramSwaraj ledgers.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="section how-section" id="how-it-works">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-tag" data-en="QUICK & TRANSPARENT" data-hi="सरल एवं पारदर्शी">QUICK & TRANSPARENT</span>
+                    <h2 data-en="How GramConnect Works" data-hi="ग्रामकनेक्ट कैसे काम करता है">
+                        How GramConnect Works
+                    </h2>
+                    <p data-en="Four simple steps from raising your village grievance to verified ground resolution."
+                       data-hi="अपनी समस्या दर्ज करने से लेकर जमीनी स्तर पर समाधान पाने के 4 आसान चरण।">
+                        Four simple steps from raising your village grievance to verified ground resolution.
+                    </p>
+                </div>
+
+                <div class="steps-grid">
+
+                    <div class="step-card" data-hover-info="Step 1: Sign up in under 30 seconds">
+                        <span class="step-number">01</span>
+                        <div class="step-icon">📱</div>
+                        <h3 data-en="Quick Registration" data-hi="आसान पंजीकरण">Quick Registration</h3>
+                        <p data-en="Login using your mobile number or Aadhaar-linked OTP with no paperwork needed."
+                           data-hi="बिना किसी कागजी कार्रवाई के मोबाइल नंबर या ओटीपी द्वारा तुरंत जुड़े।">
+                            Login using your mobile number or Aadhaar-linked OTP with no paperwork needed.
+                        </p>
+                    </div>
+
+                    <div class="step-card" data-hover-info="Step 2: Upload photo and write issue">
+                        <span class="step-number">02</span>
+                        <div class="step-icon">📸</div>
+                        <h3 data-en="Submit with Photo" data-hi="तस्वीर सहित शिकायत">Submit with Photo</h3>
+                        <p data-en="Snap a photo of the road damage or leaking pipe, select your ward, and hit submit."
+                           data-hi="समस्या की तस्वीर लें, अपना वार्ड चुनें और शिकायत दर्ज करें।">
+                            Snap a photo of the road damage or leaking pipe, select your ward, and hit submit.
+                        </p>
+                    </div>
+
+                    <div class="step-card" data-hover-info="Step 3: Track live updates on SMS & Web">
+                        <span class="step-number">03</span>
+                        <div class="step-icon">⏱️</div>
+                        <h3 data-en="Live SMS Tracking" data-hi="एसएमएस द्वारा ट्रैकिंग">Live SMS Tracking</h3>
+                        <p data-en="Receive live SMS alerts as your grievance is assigned to the Gram Sachiv and field team."
+                           data-hi="संबंधित ग्राम सचिव व फील्ड वर्कर को कार्य सौंपे जाने पर तुरंत एसएमएस अपडेट पाएं।">
+                            Receive live SMS alerts as your grievance is assigned to the Gram Sachiv and field team.
+                        </p>
+                    </div>
+
+                    <div class="step-card" data-hover-info="Step 4: Citizen verification and feedback">
+                        <span class="step-number">04</span>
+                        <div class="step-icon">✅</div>
+                        <h3 data-en="Verified Resolution" data-hi="सत्यापित समाधान">Verified Resolution</h3>
+                        <p data-en="Panchayat uploads proof of work. Issue is closed only after citizen satisfaction."
+                           data-hi="कार्य पूरा होने की फोटो अपलोड होती है। नागरिक की संतुष्टि के बाद ही शिकायत बंद की जाती है।">
+                            Panchayat uploads proof of work. Issue is closed only after citizen satisfaction.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="section about-section" id="about">
+            <div class="container about-container">
+
+                <div class="about-image" data-hover-info="Empowering rural communities together">
+                    <img
+                        src="assets/images/community.jpg"
+                        alt="Village community meeting in Gram Sabha"
+                        loading="lazy"
+                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=700&q=80';"
+                    />
+                </div>
+
+                <div class="about-content">
+                    <span class="section-tag" data-en="ABOUT OUR MISSION" data-hi="हमारा उद्देश्य">ABOUT OUR MISSION</span>
+                    <h2 data-en="Empowering Gram Sabhas Through Digital Democracy" data-hi="डिजिटल सशक्तिकरण से ग्राम सभा की मजबूती">
+                        Empowering Gram Sabhas Through Digital Democracy
+                    </h2>
+                    <p data-en="GramConnect is an initiative designed to bridge the information gap between rural citizens and village local administration."
+                       data-hi="ग्रामकनेक्ट एक ऐसा मंच है जो ग्रामीण नागरिकों और ग्राम पंचायत प्रशासन के बीच संवाद को पारदर्शी और सुगम बनाता है।">
+                        GramConnect is an initiative designed to bridge the information gap between rural citizens and village local administration.
+                    </p>
+                    <p data-en="By digitizing records, grievance logs, and fund allocations, we ensure that every villager has an equal voice in Gram Sabha decisions."
+                       data-hi="रिकॉर्ड, शिकायतों और फंड आवंटन को डिजिटल कर हम यह सुनिश्चित करते हैं कि हर नागरिक को ग्राम सभा में अपनी बात रखने का समान अधिकार मिले।">
+                        By digitizing records, grievance logs, and fund allocations, we ensure that every villager has an equal voice in Gram Sabha decisions.
+                    </p>
+
+                    <div class="about-points">
+                        <div class="point-item">
+                            <span class="point-check">✓</span>
+                            <span data-en="Direct Access to Gram Sachiv & Sarpanch" data-hi="सरपंच और ग्राम सचिव से सीधा संवाद">Direct Access to Gram Sachiv & Sarpanch</span>
+                        </div>
+                        <div class="point-item">
+                            <span class="point-check">✓</span>
+                            <span data-en="Tamper-proof Public Grievance Records" data-hi="शिकायतों का पारदर्शी और सुरक्षित रिकॉर्ड">Tamper-proof Public Grievance Records</span>
+                        </div>
+                        <div class="point-item">
+                            <span class="point-check">✓</span>
+                            <span data-en="Public Fund Auditing & Geo-tagged Works" data-hi="सार्वजनिक फंड का ऑडिट और जियो-टैगिंग">Public Fund Auditing & Geo-tagged Works</span>
+                        </div>
+                        <div class="point-item">
+                            <span class="point-check">✓</span>
+                            <span data-en="100% Inclusive Bilingual Interface" data-hi="आसान हिंदी और अंग्रेजी दोनों भाषाओं में">100% Inclusive Bilingual Interface</span>
+                        </div>
+                    </div>
+
+                    <a href="#services" class="primary-btn" data-en="Explore Platform →" data-hi="मंच से जुड़ें →">
+                        Explore Platform →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="cta-section" id="contact">
+            <div class="container cta-content">
+                <span class="cta-label" data-en="YOUR VILLAGE • YOUR VOICE" data-hi="आपका गांव • आपकी आवाज़">
+                    YOUR VILLAGE • YOUR VOICE
+                </span>
+                <h2 data-en="Shape the Future of Your Village Today" data-hi="आज ही अपने गांव के विकास में भागीदार बनें">
+                    Shape the Future of Your Village Today
+                </h2>
+                <p data-en="Raise your concern, support community initiatives, and make your Gram Panchayat accountable."
+                   data-hi="अपनी समस्या दर्ज कराएं, सामुदायिक पहलों का समर्थन करें और अपनी पंचायत को सशक्त बनाएं।">
+                    Raise your concern, support community initiatives, and make your Gram Panchayat accountable.
+                </p>
+
+                <div class="cta-action-group">
+                    <a href="pages/login.html" class="cta-button" data-en="Get Started for Free →" data-hi="मुफ्त में शुरुआत करें →">
+                        Get Started for Free →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+                <a href="#home" class="logo footer-logo">
+                    <span class="logo-icon">G</span>
+                    <span class="brand-name">Gram<span class="logo-green">Connect</span></span>
+                </a>
+                <p data-en="Your Village, Your Voice, Your Development. A citizen-led movement for modern, transparent, and accountable rural self-governance."
+                   data-hi="आपका गांव, आपकी आवाज, आपका विकास। आधुनिक और पारदर्शी ग्रामीण स्वशासन की दिशा में एक सशक्त पहल।">
+                    Your Village, Your Voice, Your Development. A citizen-led movement for modern, transparent, and accountable rural self-governance.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4 data-en="Quick Links" data-hi="त्वरित लिंक">Quick Links</h4>
+                <a href="#home" data-en="Home" data-hi="होम">Home</a>
+                <a href="#services" data-en="Services" data-hi="सेवाएं">Services</a>
+                <a href="#development" data-en="Development" data-hi="विकास कार्य">Development</a>
+                <a href="#about" data-en="About Us" data-hi="हमारे बारे में">About Us</a>
+            </div>
+
+            <div class="footer-links">
+                <h4 data-en="Citizen Portal" data-hi="नागरिक पोर्टल">Citizen Portal</h4>
+                <a href="pages/login.html" data-en="Citizen Login" data-hi="नागरिक लॉगिन">Citizen Login</a>
+                <a href="pages/login.html" data-en="File Complaint" data-hi="शिकायत दर्ज करें">File Complaint</a>
+                <a href="#how-it-works" data-en="How It Works" data-hi="कार्यप्रणाली">How It Works</a>
+                <a href="#contact" data-en="Toll-free Help" data-hi="टोल-फ्री सहायता">Toll-free Help</a>
+            </div>
+
+            <div class="footer-links">
+                <h4 data-en="Emergency & Helpline" data-hi="आपातकालीन नंबर">Emergency & Helpline</h4>
+                <p class="footer-contact-item"><strong>📞 Panchayat:</strong> 1800-XXX-XXXX</p>
+                <p class="footer-contact-item"><strong>⚡ Electricity:</strong> 1912</p>
+                <p class="footer-contact-item"><strong>🚑 Ambulance:</strong> 108</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>
+                    © <span id="year">2026</span> GramConnect. <span data-en="All rights reserved." data-hi="सर्वाधिकार सुरक्षित।">All rights reserved.</span>
+                </p>
+                <p class="footer-subtext" data-en="Built for Digital India & Self-Reliant Gram Panchayats" data-hi="डिजिटल भारत एवं आत्मनिर्भर ग्राम पंचायतों के लिए समर्पित">
+                    Built for Digital India & Self-Reliant Gram Panchayats
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE FLOATING HOVER BUBBLE -->
+    <div class="image-info-bubble" id="imageInfoBubble" aria-hidden="true">
+        <span id="bubbleText"></span>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
